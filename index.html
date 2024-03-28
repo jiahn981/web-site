@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POST 요청 처리</title>
+</head>
+<body>
+    <h1>POST 요청 처리 결과</h1>
+    <p id="post-data"></p>
+
+    <script>
+        // URL에서 POST 데이터 추출
+        const urlParams = new URLSearchParams(window.location.search);
+        const postData = urlParams.get('postData');
+
+        // POST 데이터 표시
+        document.getElementById('post-data').innerText = "POST 데이터: " + postData;
+    </script>
+</body>
+</html>
