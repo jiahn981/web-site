@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>POST 요청 처리</title>
+    <title>GET 요청 처리</title>
 </head>
 <body>
-    <h1>POST 요청 처리 결과</h1>
-    <p id="post-data"></p>
+    <h1>GET 요청 처리 결과</h1>
+    <p id="get-data"></p>
 
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const postData = urlParams.get('postData');
+        // 현재 URL의 쿼리 문자열 가져오기
+        const queryString = window.location.search;
+        
+        // URLSearchParams 객체를 사용하여 쿼리 매개변수 파싱
+        const urlParams = new URLSearchParams(queryString);
 
-        document.getElementById('post-data').innerText = "POST 데이터: " + postData;
+        // 'parameter_name'에 해당하는 쿼리 매개변수 값 가져오기
+        const parameterValue = urlParams.get('key');
+
+        // 결과를 HTML에 표시
+        document.getElementById('get-data').innerText = "GET 데이터: " + parameterValue;
     </script>
 </body>
 </html>
